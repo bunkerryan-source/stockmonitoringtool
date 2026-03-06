@@ -1,0 +1,39 @@
+{
+  "name": "watchlist-report",
+  "version": "1.0.0",
+  "description": "AI-powered stock market briefing emails for TradingView watchlists",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "report": "ts-node src/index.ts report",
+    "lists": "ts-node src/index.ts lists",
+    "build": "tsc",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:29870/git/bunkerryan-source/stockmonitoringtool"
+  },
+  "keywords": [
+    "stock",
+    "watchlist",
+    "report",
+    "email",
+    "ai",
+    "claude"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@types/node": "^25.3.5",
+    "@types/nodemailer": "^7.0.11",
+    "commander": "^14.0.3",
+    "dotenv": "^17.3.1",
+    "nodemailer": "^8.0.1",
+    "open": "^11.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "yahoo-finance2": "^3.13.2"
+  }
+}

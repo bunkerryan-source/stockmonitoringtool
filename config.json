@@ -1,0 +1,23 @@
+{
+  "watchlists": {
+    "Commodities": {
+      "tickers": ["GLD", "SLV", "USO", "UNG", "COPX", "WEAT"],
+      "description": "Commodity ETFs and futures proxies"
+    },
+    "Dividends": {
+      "tickers": ["JNJ", "PG", "KO", "T", "VZ", "MO"],
+      "description": "Dividend-paying stocks I hold"
+    }
+  },
+  "ai": {
+    "model": "claude-opus-4-6"
+  },
+  "email": {
+    "to": "myemail@gmail.com",
+    "from": "myemail@gmail.com"
+  },
+  "alerts": {
+    "bigMoverThresholdPercent": 3,
+    "unusualVolumeMultiplier": 2
+  }
+}
