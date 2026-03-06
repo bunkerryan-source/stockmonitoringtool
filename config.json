@@ -5,7 +5,7 @@
       "description": "Commodity ETFs and futures proxies"
     },
     "Dividends": {
-      "tickers": ["JNJ", "PG", "KO", "T", "VZ", "MO"],
+      "tickers": ["JNJ", "PG", "KO", "T", "VZ", "MO", "TGT"],
       "description": "Dividend-paying stocks I hold"
     }
   },
