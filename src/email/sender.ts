@@ -1,10 +1,17 @@
 import * as nodemailer from 'nodemailer';
 
+export interface EmailAttachment {
+  filename: string;
+  content: Buffer;
+  contentType: string;
+}
+
 export async function sendEmail(
   to: string,
   from: string,
   subject: string,
-  html: string
+  html: string,
+  attachments?: EmailAttachment[]
 ): Promise<void> {
   const appPassword = process.env.GMAIL_APP_PASSWORD;
   if (!appPassword) {
@@ -28,6 +35,11 @@ export async function sendEmail(
     to,
     subject,
     html,
+    attachments: attachments?.map((a) => ({
+      filename: a.filename,
+      content: a.content,
+      contentType: a.contentType,
+    })),
   });
 
   console.log(`Email sent to ${to}`);

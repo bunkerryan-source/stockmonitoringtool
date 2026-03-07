@@ -11,6 +11,7 @@ import { fetchNews } from './data/news';
 import { generateCommentary } from './ai/commentary';
 import { buildEmailHtml } from './email/template';
 import { sendEmail } from './email/sender';
+import { generatePdfFromHtml } from './email/pdfGenerator';
 import {
   TickerData,
   AlertCondition,
@@ -77,7 +78,12 @@ program
         });
       } else {
         const subject = `Watchlist Report: ${name} - ${new Date().toLocaleDateString('en-US')}`;
-        await sendEmail(config.email.to, config.email.from, subject, html);
+        console.log('  Generating PDF...');
+        const pdfBuffer = await generatePdfFromHtml(html);
+        const pdfFilename = `watchlist-report-${name.replace(/\s+/g, '-')}-${new Date().toISOString().slice(0, 10)}.pdf`;
+        await sendEmail(config.email.to, config.email.from, subject, html, [
+          { filename: pdfFilename, content: pdfBuffer, contentType: 'application/pdf' },
+        ]);
       }
     }
 

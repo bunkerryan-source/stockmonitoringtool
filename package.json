@@ -32,6 +32,7 @@
     "dotenv": "^17.3.1",
     "nodemailer": "^8.0.1",
     "open": "^11.0.0",
+    "puppeteer": "^24.38.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "yahoo-finance2": "^3.13.2"
