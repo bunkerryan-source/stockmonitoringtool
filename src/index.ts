@@ -81,7 +81,8 @@ program
         console.log('  Generating PDF...');
         const pdfBuffer = await generatePdfFromHtml(html);
         const pdfFilename = `watchlist-report-${name.replace(/\s+/g, '-')}-${new Date().toISOString().slice(0, 10)}.pdf`;
-        await sendEmail(config.email.to, config.email.from, subject, html, [
+        const recipients = Array.isArray(config.email.to) ? config.email.to.join(', ') : config.email.to;
+        await sendEmail(recipients, config.email.from, subject, html, [
           { filename: pdfFilename, content: pdfBuffer, contentType: 'application/pdf' },
         ]);
       }

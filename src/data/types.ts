@@ -9,7 +9,7 @@ export interface AppConfig {
     model: string;
   };
   email: {
-    to: string;
+    to: string | string[];
     from: string;
   };
   alerts: {
