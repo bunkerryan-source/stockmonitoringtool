@@ -13,8 +13,8 @@
     "model": "claude-opus-4-6"
   },
   "email": {
-    "to": "myemail@gmail.com",
-    "from": "myemail@gmail.com"
+    "to": "bunker.ryan@gmail.com",
+    "from": "bunker.ryan@gmail.com"
   },
   "alerts": {
     "bigMoverThresholdPercent": 3,
