@@ -64,10 +64,26 @@ export interface AlertCondition {
   value: number;
 }
 
+export interface TickerSentiment {
+  label: string;
+  text: string;
+}
+
+export interface KeyThingToWatch {
+  title: string;
+  text: string;
+}
+
+export interface AlertSummaryItem {
+  ticker: string;
+  description: string;
+}
+
 export interface AICommentary {
   narrative: string;
-  tickerSentiments: Record<string, string>;
-  keyThingsToWatch: string;
+  tickerSentiments: Record<string, TickerSentiment>;
+  keyThingsToWatch: KeyThingToWatch[];
+  alertSummaries: AlertSummaryItem[];
   error?: string;
 }
 
