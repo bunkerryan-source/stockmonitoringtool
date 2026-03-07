@@ -1,7 +1,7 @@
 {
   "watchlists": {
     "Commodities": {
-      "tickers": ["GLD", "SLV", "USO", "UNG", "COPX", "WEAT"],
+      "tickers": ["GLD", "GDX", "SIL", "URNM", "UNG", "UGA", "SLV", "USO", "UNG", "COPX", "WEAT", "VALE", "DJP", "CMDY"],
       "description": "Commodity ETFs and futures proxies"
     },
     "Dividends": {
