@@ -30,11 +30,12 @@ export async function fetchQuote(ticker: string): Promise<QuoteData> {
     let monthlyChangePercent: number | null = null;
 
     try {
-      const historical = await yahooFinance.historical(ticker, {
+      const chart = await yahooFinance.chart(ticker, {
         period1: oneMonthAgo,
         period2: now,
         interval: '1d',
       });
+      const historical = chart.quotes ?? [];
 
       if (historical.length >= 5) {
         const weekAgoPrice = historical[historical.length - 5]?.close;

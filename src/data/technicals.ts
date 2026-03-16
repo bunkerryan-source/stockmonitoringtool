@@ -48,11 +48,12 @@ export async function fetchTechnicals(
     oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
     oneYearAgo.setDate(oneYearAgo.getDate() - 10); // Extra buffer
 
-    const historical = await yahooFinance.historical(ticker, {
+    const chart = await yahooFinance.chart(ticker, {
       period1: oneYearAgo,
       period2: now,
       interval: '1d',
     });
+    const historical = chart.quotes ?? [];
 
     const closePrices = (historical as any[]).map((d: any) => d.close as number);
 
